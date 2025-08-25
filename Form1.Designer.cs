@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbBitrhday = new System.Windows.Forms.TextBox();
             this.tbBirthtime = new System.Windows.Forms.TextBox();
             this.btnShowResult = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbResult = new System.Windows.Forms.TextBox();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -45,16 +47,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "사용자 입력";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(206, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 100);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "사주 결과";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label1
             // 
@@ -69,7 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 169);
+            this.label2.Location = new System.Drawing.Point(14, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 12);
             this.label2.TabIndex = 2;
@@ -79,26 +71,46 @@
             // tbBitrhday
             // 
             this.tbBitrhday.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.tbBitrhday.Location = new System.Drawing.Point(23, 135);
+            this.tbBitrhday.Location = new System.Drawing.Point(35, 145);
             this.tbBitrhday.Name = "tbBitrhday";
-            this.tbBitrhday.Size = new System.Drawing.Size(163, 21);
+            this.tbBitrhday.Size = new System.Drawing.Size(312, 21);
             this.tbBitrhday.TabIndex = 3;
             // 
             // tbBirthtime
             // 
-            this.tbBirthtime.Location = new System.Drawing.Point(23, 188);
+            this.tbBirthtime.Location = new System.Drawing.Point(35, 224);
             this.tbBirthtime.Name = "tbBirthtime";
-            this.tbBirthtime.Size = new System.Drawing.Size(162, 21);
+            this.tbBirthtime.Size = new System.Drawing.Size(312, 21);
             this.tbBirthtime.TabIndex = 4;
             // 
             // btnShowResult
             // 
-            this.btnShowResult.Location = new System.Drawing.Point(23, 263);
+            this.btnShowResult.Location = new System.Drawing.Point(35, 282);
             this.btnShowResult.Name = "btnShowResult";
-            this.btnShowResult.Size = new System.Drawing.Size(163, 23);
+            this.btnShowResult.Size = new System.Drawing.Size(312, 56);
             this.btnShowResult.TabIndex = 5;
             this.btnShowResult.Text = "결과 보기";
             this.btnShowResult.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tbResult);
+            this.groupBox2.Location = new System.Drawing.Point(375, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(413, 426);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "사주 결과";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // tbResult
+            // 
+            this.tbResult.Location = new System.Drawing.Point(0, 28);
+            this.tbResult.Multiline = true;
+            this.tbResult.Name = "tbResult";
+            this.tbResult.ReadOnly = true;
+            this.tbResult.Size = new System.Drawing.Size(412, 397);
+            this.tbResult.TabIndex = 0;
             // 
             // Form1
             // 
@@ -115,6 +127,8 @@
             this.Name = "Form1";
             this.Text = "포춘첼러";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,12 +137,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbBitrhday;
         private System.Windows.Forms.TextBox tbBirthtime;
         private System.Windows.Forms.Button btnShowResult;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox tbResult;
     }
 }
 
