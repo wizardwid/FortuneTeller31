@@ -39,7 +39,8 @@ namespace FortuneTeller31
 
         private void 상담내역불러오기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormHistory form = new FormHistory();
+            form.Show();
         }
 
         private void 끝내기ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,7 +50,8 @@ namespace FortuneTeller31
 
         private void 포춘텔러정보ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormAbout form = new FormAbout();
+            form.ShowDialog();
         }
     }
 }
