@@ -18,7 +18,29 @@ namespace FortuneTeller31
         public Form1()
         {
             InitializeComponent();
+            LoadResults();
+        }
 
+        private void LoadResults()
+        {
+            try
+            {
+                string filename = "results.csv";
+                results = File.ReadAllLines(filename).ToList();
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show($"파일을 불러올 수 없습니다.\n(ex.Message)", "파일 없음");
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                MessageBox.Show($"파일에 접근권한이 없습니다.\n(ex.Message)", "파일 문제");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"알 수 없는 오류가 발생했습니다.\n(ex.Message)", "알 수 없는 오류",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
