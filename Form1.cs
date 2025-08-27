@@ -94,5 +94,17 @@ namespace FortuneTeller31
             FormAbout form = new FormAbout();
             form.ShowDialog();
         }
+
+        private void btnShowResult_Click(object sender, EventArgs e)
+        {
+            string birthday = tbBitrhday.Text;
+            string birthyear = tbBirthtime.Text;
+            string result = GetFortune();
+            string saju = result.Split('|')[0];
+            string message = result.Split('|')[1];
+            tbResult.Text = birthday + " " + birthyear + Environment.NewLine
+                + saju + Environment.NewLine + message;
+            SaveHistory($"{birthday} {birthyear} | {result}");
+        }
     }
 }
