@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,12 @@ namespace FortuneTeller31
 {
     public partial class Form1 : Form
     {
+        List<string> results;
+
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
@@ -46,7 +50,7 @@ namespace FortuneTeller31
             }
             else
             {
-                form = new FormHistory();
+                form = new FormHistory(this);
                 form.Show();
             }
         }
