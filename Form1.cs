@@ -124,5 +124,20 @@ namespace FortuneTeller31
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        internal void LoadHistory(string history)
+        {
+            string birthday = history.Split('|')[0].Split(' ')[0];
+            tbBitrhday.Text = birthday;
+            string birthyear = history.Split('|')[0].Split(' ')[1];
+            tbBirthtime.Text = birthyear;
+            string saju = history.Split('|')[1];
+            string message = history.Split('|')[2];
+            tbResult.Text = birthday + " " + birthyear + Environment.NewLine +
+                saju + Environment.NewLine + message;
+            FormHistory form = Application.OpenForms["FormHistory"] as FormHistory;
+            if (form != null)
+                form.UpdateHistory();
+        }
     }
 }
