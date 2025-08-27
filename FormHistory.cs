@@ -16,5 +16,9 @@ namespace FortuneTeller31
         {
             InitializeComponent();
         }
+
+        public FormHistory(Form1 form1)
+        {
+        }
     }
 }
